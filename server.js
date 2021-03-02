@@ -68,6 +68,7 @@ app.all('/api/core/admin/*', [require('./server/middleware/validateAdmin')]);
 // API routes
 app.use('/api', require('./server/routes/api'));
 app.use('/api/events', require('./server/routes/events-api')); // this is currently a public route
+app.use('/api/users', require('./server/routes/users-api')); // this is currently a public route
 
 // catch all other routes and return index file
 app.all('*', (req, res) => {
