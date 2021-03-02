@@ -6,7 +6,7 @@ const users = {
           first-name,
           last-name,
           email
-        from events.event.user
+        from events.event_user
       `;
   
       pool.select(res, qryStr);
