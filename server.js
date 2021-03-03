@@ -72,7 +72,7 @@ app.use('/api/users', require('./server/routes/users-api')); // this is currentl
 
 // catch all other routes and return index file
 app.all('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pub/index.html'));
+    res.sendFile(path.join(__dirname, 'pub/index.html'));
 });
 
 // create HTTP server
