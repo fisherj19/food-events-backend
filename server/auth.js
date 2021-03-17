@@ -4,7 +4,6 @@ const auth = {
     const un = username || '';
     const id = userid || '';
     const admins = [
-      'fisherj19@xavier.edu',
       'catalanom@xavier.edu',
       'rippergerj@xavier.edu'
     ];
