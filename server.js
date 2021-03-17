@@ -63,11 +63,11 @@ app.set('pool', require('./server/pg-connector'));
 
 // set up security middleware
 app.all('/api/core/*', [require('./server/middleware/validateRequest')]);
-app.all('/api/core/admin/*', [require('./server/middleware/validateAdmin')]);
+app.all('/api/core/*admin/*', [require('./server/middleware/validateAdmin')]);
 
 // API routes
 app.use('/api', require('./server/routes/api'));
-app.use('/api/events', require('./server/routes/events-api')); // this is currently a public route
+app.use('/api/core/events', require('./server/routes/events-api'));
 
 // catch all other routes and return index file
 app.all('*', (req, res) => {
