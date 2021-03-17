@@ -3,6 +3,11 @@ const auth = {
     const tok = token || '';
     const un = username || '';
     const id = userid || '';
+    const admins = [
+      'fisherj19@xavier.edu',
+      'catalanom@xavier.edu',
+      'rippergerj@xavier.edu'
+    ];
 
     if (tok === '' || un === '' || id === '') {
       return res.status(401).send({ message: 'Missing credentials' });
@@ -18,7 +23,11 @@ const auth = {
           } else if (id === decodedToken.uid) {
             res.locals._current_user_name = un;
             res.locals._current_user_id = id;
-            res.locals._current_user_is_admin = decodedToken.admin || false;
+            // res.locals._current_user_is_admin = decodedToken.admin || false;
+            res.locals._current_user_is_admin = false;
+            if (admins.includes(un)) {
+              res.locals._current_user_is_admin = true;
+            }
             next();
           } else {
             return res.status(403).send({ message: 'Invalid user' });
