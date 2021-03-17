@@ -63,7 +63,7 @@ app.set('pool', require('./server/pg-connector'));
 
 // set up security middleware
 app.all('/api/core/*', [require('./server/middleware/validateRequest')]);
-app.all('/api/core/*admin/*', [require('./server/middleware/validateAdmin')]);
+app.all('/api/core/admin/*', [require('./server/middleware/validateAdmin')]);
 
 // API routes
 app.use('/api', require('./server/routes/api'));
