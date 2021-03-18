@@ -54,8 +54,24 @@ const events = {
         
         const params = new Array(req.params.id);
 
-        pool.selectOne(res, qryStr, params, 'food event');
-    }
+    pool.selectOne(res, qryStr, params, 'food event');
+  },
+
+  insert: (req, res) => {
+    const pool = req.app.get('pool');
+    const qryStr = `
+      insert into events.food_event (
+        ...columns...
+      ) valuse (
+        ...values...
+      )
+    `;
+    const params = [
+      // form fields to fill the values
+    ];
+
+    pool.insert(res, qryStr, params);
+  }
 };
 
 module.exports = events;
