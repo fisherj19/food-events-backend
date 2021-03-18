@@ -4,8 +4,16 @@ const auth = {
     const un = username || '';
     const id = userid || '';
     const admins = [
+      'fisherj19@xavier.edu',
       'catalanom@xavier.edu',
-      'rippergerj@xavier.edu'
+      'rippergerj@xavier.edu',
+      'stoneh@xavier.edu',
+      'millsc6@xavier.edu',
+      'birchs@xavier.edu',
+      'oldings1@xavier.edu',
+      'weisbrodj@xavier.edu',
+      'daguinsinh@xavier.edu',
+      'lerarisb@xavier.edu'
     ];
 
     if (tok === '' || un === '' || id === '') {
