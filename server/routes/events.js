@@ -61,7 +61,7 @@ const events = {
     const qryStr = `
       insert into events.food_event (
         ...columns...
-      ) valuse (
+      ) values (
         ...values...
       )
     `;
