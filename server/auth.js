@@ -5,7 +5,7 @@ const auth = {
     const id = userid || '';
     const admins = [
       'catalanom@xavier.edu',
-      'rippergerj@xavier.edu'
+      'rippergerj@xavier.edu',
     ];
 
     if (tok === '' || un === '' || id === '') {
