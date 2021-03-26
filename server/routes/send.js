@@ -1,5 +1,5 @@
 const SparkPost = require('sparkpost');
-const sparky = new SparkPost('27f270542f7c16beb57198b9b1994fb8cb69e5ed');
+const sparky = new SparkPost('');
 
 sparky.transmissions.send({
   options: { sandbox: true },
