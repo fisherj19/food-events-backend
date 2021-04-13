@@ -6,6 +6,12 @@ const auth = {
     const admins = [
       'catalanom@xavier.edu',
       'rippergerj@xavier.edu',
+      'fisher19@xavier.edu',
+      'millsc6@xavier.edu',
+      'stoneh@xavier.edu',
+      'weisbrodj@xavier.edu',
+      'birchs@xavier.edu',
+      'oldings1@xavier.edu'
     ];
 
     if (tok === '' || un === '' || id === '') {

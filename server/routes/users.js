@@ -5,14 +5,18 @@ const users = {
             select id,
                 first_name,
                 last_name,
-                email
+                email,
+                phone as phoneNumber,
+                banner_id as bannerID,
+                is_admin as isAdmin
             from events.event_user
         `;
         pool.select(res, qryStr);
     },
 
     getById: (req, res) => {
-        if (res.locals._current_user_id === req.params.id) {
+      const email = decodeURIComponent(req.params.email);
+        if (res.locals._current_user_name === email) {
             const pool = req.app.get('pool');
             const qryStr = `
               select id,
@@ -32,10 +36,10 @@ const users = {
                 banner_id as bannerID,
                 is_admin as isAdmin
               from events.event_user
-              where id = $1
+              where email = $1
             `;
             const params = [
-              req.params.id
+              email
             ];
 
             pool.selectOne(res, qryStr, params, 'user');
@@ -87,6 +91,7 @@ const users = {
         res.locals._current_user_id,
         res.locals._current_user_name,
         req.body.displayName,
+        req.body.first_name,
         req.body.last_name || '',
         req.body.phoneNumber,
         req.body.notify_by_email || false,
@@ -102,7 +107,7 @@ const users = {
       ];
 
       pool.insert(res, qryStr, params);
-    }
+    },
 };
   
 module.exports = users;
