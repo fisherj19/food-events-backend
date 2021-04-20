@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const events = require('./send');
+const send = require('./send');
 
 router.get('/', (req, res) => send.send(req, res));
 
