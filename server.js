@@ -67,7 +67,7 @@ app.all('/api/core/admin/*', [require('./server/middleware/validateAdmin')]);
 
 // API routes
 app.use('/api', require('./server/routes/api'));
-app.use('api/core/send'), require('./server/route/send-api');
+app.use('api/core/send', require('./server/route/send-api'));
 app.use('/api/core/events', require('./server/routes/events-api'));
 
 // catch all other routes and return index file
