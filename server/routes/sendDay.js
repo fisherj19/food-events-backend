@@ -1,3 +1,4 @@
+
 const SparkPost = require('sparkpost');
 const sparky = new SparkPost('');
 
