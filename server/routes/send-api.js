@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const events = require('./events');
+const send = require('./send');
 
-router.get('/:id', (req, res) => events.getById(req, res));
+router.get('/', (req, res) => send.send(req, res));
 
 
 module.exports = router;
