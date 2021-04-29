@@ -6,4 +6,5 @@ router.get('/core/check_admin', (req, res) => res.status(200).send(
   { is_admin: res.locals._current_user_is_admin || false }
 ));
 
+
 module.exports = router;
